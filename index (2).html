@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Office Supplies — Housekeeping & Maintenance</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0f172a; --muted:#9aa4b2; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+      --max-width:1200px;
+      --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071025 0%, var(--bg) 100%);color:#e6eef6;line-height:1.45}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px}
+
+    /* Header / Nav */
+    header{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:18px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+    .logo svg{width:36px;height:36px}
+    nav{flex:1}
+    .nav-list{display:flex;gap:12px;align-items:center}
+    .nav-item{position:relative;padding:8px 12px;border-radius:10px;cursor:pointer}
+    .nav-item:hover{background:var(--glass)}
+
+    /* Mega menu shown on hover */
+    .mega {
+      position:absolute;
+      left:0;
+      top:56px;
+      width:960px;
+      max-width:calc(100vw - 60px);
+      background: rgba(100, 100, 100, 0.95); /* fixed background visibility */
+      backdrop-filter: blur(8px);
+      border-radius:12px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(6px);
+      transition:all .22s cubic-bezier(.2,.9,.3,1);
+    }
+    .nav-item:hover .mega{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .mega h4{margin:0 0 8px 0;color:#dff5fb;font-size:14px}
+    .mega ul{margin:0;padding:0;list-style:none;font-size:13px;color:var(--muted)}
+    .mega li{padding:6px 0}
+
+    /* Controls */
+    .controls{display:flex;gap:12px;align-items:center}
+    .search{background:#071427;padding:8px;border-radius:10px;display:flex;gap:8px;align-items:center}
+    .search input{background:transparent;border:0;outline:none;color:inherit;min-width:200px}
+    .btn{background:linear-gradient(90deg,var(--accent),#60a5fa);border:none;padding:9px 12px;border-radius:10px;color:#032029;font-weight:600;cursor:pointer}
+
+    /* Hero */
+    .hero{margin-top:22px;display:grid;grid-template-columns:1fr 320px;gap:20px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px}
+    .hero-card h1{margin:0 0 10px;font-size:28px}
+    .hero-card p{color:var(--muted);margin:0 0 16px}
+    .hero-cta{display:flex;gap:12px}
+
+    /* Category grid */
+    .grid{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .product{background:rgba(255,255,255,0.02);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .product h3{margin:0 0 8px;font-size:16px}
+    .product p{color:var(--muted);font-size:13px;margin:0}
+
+    /* Footer */
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .mega{position:static;margin-top:10px;transform:none;opacity:1;pointer-events:auto}
+      .nav-list{flex-wrap:wrap}
+    }
+
+    /* Small helpers */
+    .tag{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+    .card-row{display:flex;gap:12px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#06202A"/><path d="M6 12h12M12 6v12" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Office Supplies
+      </div>
+
+      <nav>
+        <div class="nav-list">
+          <div class="nav-item">Cleaning Supplies
+            <div class="mega" aria-hidden="true">
+              <div>
+                <h4>Daily Cleaning</h4>
+                <ul>
+                  <li>Broom & dustpan</li>
+                  <li>Mop & bucket (wet/dry)</li>
+                  <li>Vacuum cleaner</li>
+                  <li>Cleaning cloths & sponges</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Consumables</h4>
+                <ul>
+                  <li>Floor cleaner / disinfectant</li>
+                  <li>Glass & multi-surface cleaner</li>
+                  <li>Toilet & bathroom cleaner</li>
+                  <li>Air fresheners</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Washroom</h4>
+                <ul>
+                  <li>Toilet rolls & paper towels</li>
+                  <li>Liquid soap & hand wash refills</li>
+                  <li>Sanitary bins & disposal bags</li>
+                  <li>Urinal cakes / air deodorizer</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Pantry</h4>
+                <ul>
+                  <li>Dishwashing liquid & sponges</li>
+                  <li>Disposable cups / plates / napkins</li>
+                  <li>Water purifier cartridges</li>
+                  <li>Tea / coffee / sugar supplies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item">Maintenance
+            <div class="mega" aria-hidden="true">
+              <div>
+                <h4>Electrical & Tools</h4>
+                <ul>
+                  <li>Light bulbs & LED panels</li>
+                  <li>Extension cords & power strips</li>
+                  <li>Batteries (AA/AAA/9V)</li>
+                  <li>Basic toolset (screwdrivers, hammer)</li>
+                </ul>
+              </div>
+              <div>
+                <h4>HVAC & Fixtures</h4>
+                <ul>
+                  <li>AC filters & servicing items</li>
+                  <li>Ladder / step stool</li>
+                  <li>Door stoppers & hooks</li>
+                  <li>Cable ties & organizers</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Safety</h4>
+                <ul>
+                  <li>Fire extinguishers</li>
+                  <li>First aid kit</li>
+                  <li>Safety signs (Wet floor, Exit)</li>
+                  <li>Pest control items</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Stationery & Upkeep</h4>
+                <ul>
+                  <li>Pens, notepads, markers</li>
+                  <li>Printer paper & cartridges</li>
+                  <li>File folders & labels</li>
+                  <li>Whiteboard supplies</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item">Services
+            <div class="mega" aria-hidden="true">
+              <div>
+                <h4>Periodic</h4>
+                <ul>
+                  <li>Floor polishing</li>
+                  <li>Deep-cleaning schedule</li>
+                  <li>AC servicing</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Inventory</h4>
+                <ul>
+                  <li>Refill reminders</li>
+                  <li>Stock reorder thresholds</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Safety Checks</h4>
+                <ul>
+                  <li>Fire extinguisher servicing</li>
+                  <li>First aid kit audit</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Vendor</h4>
+                <ul>
+                  <li>Approved suppliers list</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav-item">About</div>
+        </div>
+      </nav>
+
+      <div class="controls">
+        <div class="search" role="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="#9aa4b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="5" stroke="#9aa4b2" stroke-width="1.5"/></svg>
+          <input placeholder="Search supplies, e.g. 'mop'" aria-label="Search supplies">
+        </div>
+        <button class="btn">Cart (0)</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <h1>Everything you need to keep your office spotless</h1>
+          <p>Browse housekeeping, washroom, pantry, maintenance and safety supplies — organized like a shop for quick selection and reorder.</p>
+          <div class="hero-cta">
+            <button class="btn">Shop All</button>
+            <button class="tag">Request Quote</button>
+          </div>
+
+          <div style="margin-top:16px">
+            <div class="card-row">
+              <div class="product" style="min-width:180px">
+                <h3>Top categories</h3>
+                <p>Cleaning • Washroom • Maintenance • Pantry</p>
+              </div>
+              <div class="product">
+                <h3>Popular</h3>
+                <p>Hand wash refills, Trash bags, Light bulbs, First aid kits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Quick checklist</h3>
+          <p style="color:var(--muted);font-size:13px">Use this for inventory audits</p>
+          <ul style="margin-top:10px;color:var(--muted);font-size:14px">
+            <li>Trash bags & liners</li>
+            <li>Toilet rolls & tissues</li>
+            <li>Hand soap & sanitizers</li>
+            <li>Light bulbs & batteries</li>
+            <li>Basic toolset & ladder</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="grid" aria-label="supplies grid">
+        <div class="product">
+          <h3>Housekeeping & Cleaning</h3>
+          <p>mop, broom, vacuum, cloths, sponges, dusters</p>
+        </div>
+        <div class="product">
+          <h3>Cleaning Consumables</h3>
+          <p>floor cleaner, glass cleaner, disinfectant, air fresheners</p>
+        </div>
+        <div class="product">
+          <h3>Washroom Supplies</h3>
+          <p>toilet paper, paper towels, soap refills, sanitary bins</p>
+        </div>
+        <div class="product">
+          <h3>Pantry & Kitchen</h3>
+          <p>disposable cups, dishwashing liquid, water filter cartridges</p>
+        </div>
+        <div class="product">
+          <h3>Electrics & Tools</h3>
+          <p>bulbs, extension cords, batteries, tool kit</p>
+        </div>
+        <div class="product">
+          <h3>HVAC & Fixtures</h3>
+          <p>AC filters, ladder, door hooks, cable ties</p>
+        </div>
+        <div class="product">
+          <h3>Safety & First Aid</h3>
+          <p>fire extinguishers, first aid kit, safety signage</p>
+        </div>
+        <div class="product">
+          <h3>Office Upkeep</h3>
+          <p>stationery, printer paper, labels, whiteboard markers</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built for quick procurement • Customize categories or export as CSV using the UI
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('focusin', () => item.classList.add('focus'))
+      item.addEventListener('focusout', () => item.classList.remove('focus'))
+    })
+  </script>
+</body>
+</html>
